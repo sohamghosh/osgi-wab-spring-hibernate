@@ -1,8 +1,13 @@
 Sample OSGi web application bundle (WAB) using Spring and Hibernate. Tested on Virgo server 3.6.2.
 
+Steps
 1. Take a spin with Virgo - http://wiki.eclipse.org/Virgo/Community/Spin
-2. cp target/osgi-wab.war $VIRGO_HOME/pickup
-3. cp deps/*.jar $VIRGO_HOME/repository/usr
-4. Run sql/stocks.sql (Stock names created - 'apple', 'google', and 'blackberry.')
-5. URL - /osgi-wab/stocks/find/<stock-name>
-5. URL - /osgi-wab/stocks/create/<stock-name>
+2. To configure datasource refer to bean 'myDataSource' in app-context.xml.
+3. Build the project. cp target/osgi-wab.war $VIRGO_HOME/pickup
+4. cp deps/*.jar $VIRGO_HOME/repository/usr
+5. Run sql/stocks.sql (Stock names created - 'apple', 'google', and 'blackberry.')
+6. Start Virgo server.
+
+URLs (GET) 
+  /osgi-wab/stocks/find/<stock-name>
+  /osgi-wab/stocks/create/<stock-name>
