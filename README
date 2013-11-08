@@ -1,5 +1,5 @@
 Sample OSGi web application bundle (WAB) using Spring and Hibernate.
 
 1. Run sql/stocks.sql to create database, table, and data.
-2. URL - /spike-wab/stocks/<stock-name>
+2. URL - /osgi-wab/stocks/<stock-name>
 (Valid stock names are 'apple', 'google', and 'blackberry.')

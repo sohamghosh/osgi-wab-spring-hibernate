@@ -10,7 +10,7 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "testApplicationContext.xml")
+@ContextConfiguration(locations = "classpath:app-context.xml")
 public class StockIT {
 
     @Autowired
