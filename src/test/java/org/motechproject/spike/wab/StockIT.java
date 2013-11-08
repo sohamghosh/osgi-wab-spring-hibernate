@@ -1,5 +1,6 @@
 package org.motechproject.spike.wab;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,15 @@ public class StockIT {
         Stock stock = stockService.findStock("google");
         assertNotNull(stock);
         assertEquals("GOOGLE", stock.getStockCode());
+    }
+
+    @Test
+    public void shouldCreateStock() {
+        final String name = RandomStringUtils.random(10, true, false);
+        stockService.createStock(name);
+        Stock stock = stockService.findStock(name);
+        assertNotNull(stock);
+        assertEquals(name.toUpperCase(), stock.getStockCode());
     }
 }
 

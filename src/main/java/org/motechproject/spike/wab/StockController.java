@@ -14,9 +14,16 @@ public class StockController {
     private StockService stockService;
 
     @ResponseBody
-    @RequestMapping("/{name}")
+    @RequestMapping("/find/{name}")
     public String findStock(@PathVariable String name) {
         Stock stock = stockService.findStock(name);
         return stock != null ? stock.toString() : "No record found.";
+    }
+
+    @ResponseBody
+    @RequestMapping("/create/{name}")
+    public String createStock(@PathVariable String name) {
+        stockService.createStock(name);
+        return "Stock [" + name + "] created.";
     }
 }

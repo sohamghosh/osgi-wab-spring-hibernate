@@ -28,4 +28,12 @@ public class StockService {
         }
         return null;
     }
+
+    public void createStock(String name) {
+        Session session = sessionFactory.getCurrentSession();
+        Stock stock = new Stock();
+        stock.setStockCode(name.toUpperCase());
+        stock.setStockName(name);
+        session.save(stock);
+    }
 }
